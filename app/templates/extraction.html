@@ -1,11 +1,17 @@
-{% extends 'base.html'%}
-{% block title %}Ekstrakcja produktu{% endblock %}
-{% block content%}
-                <form id="ekstrakcja">
-                  <div class="mb-3 w-75">
-                    <label for="product-id">ID produktu:</label>
-                    <input type="text" class="form-control" id="product-id" placeholder="Wprowadź ID produktu">
-                  </div>
-                  <button type="submit" class="btn btn-secondary">Ekstrakcja</button>
-                </form>
+{% extends 'base.html' %}
+{% block title %}Pobierz opinie{% endblock %}
+{% block content %}
+<form method="POST" action="{{url_for('extraction')}}">
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="product_id" class="col-form-label">Kod produktu:</label>
+        </div>
+        <div class="col-auto">
+            <input type="text" required id="product_code" name="product_code" placeholder="Wpisz kod produktu" class="form-control" aria-describedby="passwordHelpInline">
+        </div>
+        <div class="col-auto">
+            <input type="submit" class="btn btn-success" value="Ekstrakcja">
+        </div>
+    </div>
+</form>
 {% endblock %}
