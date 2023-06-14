@@ -3,6 +3,7 @@ from flask import render_template, request, redirect, url_for
 import requests
 import json
 import os
+import pandas as pd
 from bs4 import BeautifulSoup
 from app.utils import extract_tag, selectors
 
